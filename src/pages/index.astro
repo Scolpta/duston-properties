@@ -1,11 +1,225 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from "astro:assets";
+import videoUrl from "../assets/hero_video.mp4?url";
+import imageUrl from "../assets/property.webp?url";
+import InsightCard from "../components/InsightCard.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="mx-auto max-w-[919px]">
+        <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+          Shaping Experiences. Building for People. Creating Futures.
+        </h1>
+        <p class="text-body-lg leading-[32px] max-w-[586px] mt-4">
+          Discover residences, communities, and investment opportunities
+          designed for a lasting impact.
+        </p>
+
+        <button
+          class="bg-primary cursor-pointer text-white p-3 font-medium rounded-full flex items-center gap-2 mt-10"
+        >
+          Find a property
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-white"
+            ><circle cx="12" cy="12" r="10"></circle><path d="m12 16 4-4-4-4"
+            ></path><path d="M8 12h8"></path></svg
+          >
+        </button>
+      </div>
+    </div>
+
+    {/* Video */}
+    <div class="mt-12">
+      <video
+        src={videoUrl}
+        autoplay
+        muted
+        loop
+        class="w-full h-[744px] object-cover"></video>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto">
+      <h3 class="text-d2 leading-[78px] font-semibold text-primary">
+        We create spaces that inspire belonging and lasting value from homes and
+        workplaces to lifestyle destinations blending innovation, elegance, and
+        responsibility.
+      </h3>
+
+      <hr class="my-16 text-[#DBD5D5]" />
+    </div>
+  </section>
+
+  <section class="pb-12">
+    <div class="container mx-auto px-6 flex justify-between gap-12">
+      <div>
+        <h6 class="text-h6 text-primary">
+          EXPERTISE THAT TRANSFORMS<br />PROPERTY JOURNEYS
+        </h6>
+
+        <button class="mt-5 underline text-[20px] leading-[24px]"
+          >View projects</button
+        >
+      </div>
+      <div class="max-w-[476px] flex flex-col gap-10">
+        <div>
+          <h4 class="text-h6 font-semibold text-primary">
+            People-Centered Design
+          </h4>
+          <p class="mt-2 text-primary/80 text-body leading-body">
+            Your comfort, lifestyle, and community come first. Every space is
+            crafted to fit how you live, work, and connect.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-h6 font-semibold text-primary">
+            Future-Ready Innovation
+          </h4>
+          <p class="mt-2 text-primary/80 text-body leading-body">
+            Enjoy modern living today with designs that adapt to tomorrow. Smart
+            layouts, cutting-edge features, and timeless style keep your
+            investment relevant.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-h6 font-semibold text-primary">
+            Sustainable Practices
+          </h4>
+          <p class="mt-2 text-primary/80 text-body leading-body">
+            Live better while making a positive impact. Our eco-conscious
+            choices mean healthier environments, lower costs, and communities
+            built to last.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-h6 font-semibold text-primary">Enduring Value</h4>
+          <p class="mt-2 text-primary/80 text-body leading-body">
+            More than a property — it’s long-term peace of mind. Our
+            developments deliver appreciation, security, and a legacy you can
+            count on.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mx-auto px-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <span class="size-5 rounded-full bg-secondary shrink-0"></span>
+          <h6 class="text-h6 font-semibold text-primary">PROJECTS</h6>
+        </div>
+
+        <button class="mt-5 underline text-[20px] leading-[24px]"
+          >See all projects</button
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="container mx-auto px-6 flex justify-between gap-12">
+      <div>
+        <h6 class="text-h6 text-primary uppercase">
+          Your property <br />journey simplified
+        </h6>
+      </div>
+      <div class="flex flex-col gap-10">
+        <div class="grid grid-cols-2 gap-[80px] max-w-[727px]">
+          <h4 class="text-h6 font-semibold text-primary">Explore & Select</h4>
+          <p class="text-primary/80 text-body leading-body max-w-[432px]">
+            Browse our portfolio of residences, communities, and lifestyle
+            spaces. Choose the property that best matches your needs and
+            aspirations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-[80px] max-w-[727px]">
+          <h4 class="text-h6 font-semibold text-primary">
+            Secure & Personalize
+          </h4>
+          <p class="text-primary/80 text-body leading-body max-w-[432px]">
+            Work with our team to reserve your property. We’ll guide you through
+            transparent pricing, flexible payment options, and available
+            customization features.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-[80px] max-w-[727px]">
+          <h4 class="text-h6 font-semibold text-primary">Move In & Thrive</h4>
+          <p class="text-primary/80 text-body leading-body max-w-[432px]">
+            Receive your keys and start living, working, or investing with
+            confidence. Enjoy ongoing support, from property management to
+            long-term value growth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <Image
+      src={imageUrl}
+      alt="Duston Properties"
+      class="w-full h-[800px] object-cover"
+      width={1440}
+      height={800}
+    />
+  </section>
+
+  <!-- {Insights} -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="flex items-center gap-4">
+        <span class="size-5 rounded-full bg-secondary shrink-0"></span>
+        <h6 class="text-h6 font-semibold text-primary">Insights</h6>
+      </div>
+      <div class="mt-10 flex flex-col">
+        <InsightCard />
+        <InsightCard
+          tag="Article"
+          readTime="7 min read"
+          title="Designing Communities for Tomorrow’s Needs"
+          excerpt="From adaptable floor plans to connected amenities, here’s how thoughtful design creates long-term value for residents and investors."
+          imageSrc="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1440&auto=format&fit=crop"
+        />
+      </div>
+
+      <button
+        class="bg-primary mx-auto text-white p-3 font-medium rounded-full flex items-center gap-2 mt-10"
+      >
+        Read more insights
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-white"
+          ><circle cx="12" cy="12" r="10"></circle><path d="m12 16 4-4-4-4"
+          ></path><path d="M8 12h8"></path></svg
+        >
+      </button>
+    </div>
+  </section>
 </Layout>

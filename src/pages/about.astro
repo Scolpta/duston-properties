@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import imageUrl from "../assets/about.webp?url";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="mx-auto max-w-[696px]">
+        <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+          Every development begins with people
+        </h1>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <Image
+        src={imageUrl}
+        alt="Duston Properties"
+        class="w-full h-[744px] object-cover"
+        width={1440}
+        height={744}
+      />
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container mx-auto">
+      <div class="max-w-[422px] ml-auto">
+        <p class="text-body-lg">
+          we create ennvironments that elevate living, working and investing
+          into eperiences of value.
+        </p>
+      </div>
+
+      <hr class="my-15 text-[#D4CFCF]" />
+
+      <div class="flex items-start gap-10 justify-between1">
+        <div class="flex items-center gap-4 w-full">
+          <span class="size-5 rounded-full bg-secondary shrink-0"></span>
+          <h6 class="text-h6 text-primary">OUR PHILOSOPHY</h6>
+        </div>
+        <div class="flex flex-col gap-10 w-full">
+          <div class="max-w-[476px]">
+            <h4 class="text-h6 font-semibold text-primary">People First</h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              Every project starts with people at the centre
+            </p>
+          </div>
+          <div class="max-w-[476px]">
+            <h4 class="text-h6 font-semibold text-primary">Future Ready:</h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              Designs that adapt and grow with lives and communities.
+            </p>
+          </div>
+          <div class="max-w-[476px]">
+            <h4 class="text-h6 font-semibold text-primary">Purpose Driven</h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              Building not just for today, but for legacy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-15 text-[#D4CFCF]" />
+
+      <div class="flex items-start gap-10 justify-between">
+        <div class="flex items-center gap-4 w-full">
+          <span class="size-5 rounded-full bg-secondary shrink-0"></span>
+          <h6 class="text-h6 text-primary">OUR VALUES</h6>
+        </div>
+        <ul class="flex flex-col gap-5 text-body-lg w-full">
+          <li>01. Open to new ideas</li>
+          <li>02. Bold in execution</li>
+          <li>03. Sustainable in practice</li>
+          <li>04. Distinctive in delivery</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>

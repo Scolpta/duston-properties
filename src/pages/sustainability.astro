@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets";
+import videoUrl from "../assets/hero_video.mp4?url";
+import imageUrl from "../assets/property.webp?url";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="py-16">
+    <div class="container mx-auto">
+      <div class="mx-auto max-w-[984px]">
+        <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+          With sustainability at our core, Duston developments are more than
+          homes and spaces they are responsible legacies.
+        </h1>
+      </div>
+    </div>
+
+    <div class="mt-12">
+      <Image
+        src={imageUrl}
+        alt="Duston Properties"
+        class="w-full h-[744px] object-cover"
+        width={1440}
+        height={744}
+      />
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="container mx-auto">
+      <div class="flex items-start gap-10 justify-between">
+        <div class="flex items-center gap-4">
+          <span class="size-5 rounded-full bg-secondary shrink-0"></span>
+          <h6 class="text-h6">OUR PHILOSOPHY</h6>
+        </div>
+        <div class="flex flex-col gap-8 max-w-[476px]">
+          <div>
+            <h4 class="text-h6 font-semibold text-primary">Our Commitment</h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              Sustainability is not an addition to our process; it is embedded
+              in our philosophy. We believe the environments we create should
+              enrich lives without compromising the planet.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-h6 font-semibold text-primary">Green Design</h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              We integrate energy-efficient systems, natural light, and
+              eco-friendly materials into our projects, reducing environmental
+              impact while enhancing comfort and well-being.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-h6 font-semibold text-primary">
+              Communities That Last
+            </h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              We design neighbourhoods that are resilient, inclusive, and
+              supportive of health and happiness. From green spaces to social
+              amenities, our projects prioritise quality of life.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-h6 font-semibold text-primary">
+              Environmental Stewardship
+            </h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              Every development reflects Duston’s responsibility to conserve
+              resources, minimise waste, and reduce carbon emissions.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-h6 font-semibold text-primary">Legacy Thinking</h4>
+            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+              We are not only building for today but shaping environments that
+              will sustain future generations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20">
+    <div class="container mx-auto">
+      <div class="w-full h-[708px] overflow-hidden rounded relative">
+        <video
+          src={videoUrl}
+          autoplay
+          muted
+          loop
+          class="w-full h-full object-cover"></video>
+        <div
+          class="absolute inset-0 bg-primary/50 flex flex-col items-center justify-center"
+        >
+          <h2
+            class="text-d2 text-white max-w-[826px] text-center leading-[78px] font-semibold"
+          >
+            <span class="text-secondary">Build Your Future</span> with Duston Properties
+          </h2>
+
+          <button
+            class="bg-white text-primary p-3 font-medium rounded-full flex items-center gap-2 mt-20"
+          >
+            Find a property
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-primary"
+              ><circle cx="12" cy="12" r="10"></circle><path d="m12 16 4-4-4-4"
+              ></path><path d="M8 12h8"></path></svg
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

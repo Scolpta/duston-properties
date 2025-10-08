@@ -1,0 +1,54 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string; // e.g., "Type of building"
+  imageSrc: string;
+  href?: string;
+  alt?: string;
+}
+
+const {
+  title,
+  subtitle = "Type of building",
+  imageSrc,
+  href,
+  alt = title,
+} = Astro.props as Props;
+---
+
+<article class="group rounded overflow-hidden">
+  {
+    href ? (
+      <a
+        href={href}
+        class="block focus:outline-none focus:ring-2 focus:ring-secondary"
+      >
+        <div class="w-full h-[360px] md:h-[420px]">
+          <img
+            src={imageSrc}
+            alt={alt}
+            class="w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-95"
+          />
+        </div>
+        <div class="bg-primary px-4 py-3">
+          <h3 class="text-body-lg leading-[32px] font-semibold text-secondary">
+            {title}
+          </h3>
+          <p class="text-body leading-body text-white/80">{subtitle}</p>
+        </div>
+      </a>
+    ) : (
+      <div class="block">
+        <div class="w-full h-[360px] md:h-[420px]">
+          <img src={imageSrc} alt={alt} class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-primary px-4 py-3">
+          <h3 class="text-body-lg leading-[32px] font-semibold text-secondary">
+            {title}
+          </h3>
+          <p class="text-body leading-body text-white/80">{subtitle}</p>
+        </div>
+      </div>
+    )
+  }
+</article>
