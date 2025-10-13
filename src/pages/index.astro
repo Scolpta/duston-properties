@@ -7,20 +7,24 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="py-16">
-    <div class="container mx-auto px-6">
+  <section class="py-8 md:py-16">
+    <div class="container mx-auto px-4 md:px-6">
       <div class="mx-auto max-w-[919px]">
-        <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+        <h1
+          class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
+        >
           Shaping Experiences. Building for People. Creating Futures.
         </h1>
-        <p class="text-body-lg leading-[32px] max-w-[586px] mt-4">
+        <p
+          class="text-body md:text-body-lg leading-[28px] md:leading-[32px] max-w-[586px] mt-4"
+        >
           Discover residences, communities, and investment opportunities
           designed for a lasting impact.
         </p>
 
         <a
           href="/projects"
-          class="bg-primary cursor-pointer text-white w-max py-3 px-5 font-medium rounded-full flex items-center gap-2 mt-10"
+          class="bg-primary cursor-pointer text-white w-max py-3 px-5 font-medium rounded-full flex items-center gap-2 mt-6 md:mt-10"
         >
           Find a property
 
@@ -43,73 +47,89 @@ import Layout from "../layouts/Layout.astro";
     </div>
 
     {/* Video */}
-    <div class="mt-12">
+    <div class="mt-8 md:mt-12">
       <video
         src={videoUrl}
         autoplay
         muted
         loop
-        class="w-full h-[744px] object-cover"></video>
+        class="w-full h-[300px] md:h-[744px] object-cover"></video>
     </div>
   </section>
 
   <section>
-    <div class="container mx-auto">
-      <h3 class="text-d2 leading-[78px] font-semibold text-primary">
+    <div class="container mx-auto px-4 md:px-6">
+      <h3
+        class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
+      >
         We create spaces that inspire belonging and lasting value from homes and
         workplaces to lifestyle destinations blending innovation, elegance, and
         responsibility.
       </h3>
 
-      <hr class="my-16 text-[#DBD5D5]" />
+      <hr class="my-8 md:my-16 text-[#DBD5D5]" />
     </div>
   </section>
 
-  <section class="pb-12">
-    <div class="container mx-auto px-6 flex justify-between gap-12">
-      <div>
-        <h6 class="text-h6 text-primary">
+  <section class="pb-8 md:pb-12">
+    <div
+      class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-8 md:gap-12"
+    >
+      <div class="md:w-auto">
+        <h6 class="text-body-sm md:text-h6 text-primary">
           EXPERTISE THAT TRANSFORMS<br />PROPERTY JOURNEYS
         </h6>
 
-        <a href="/projects" class="mt-5 underline text-[20px] leading-[24px]"
+        <a
+          href="/projects"
+          class="mt-4 md:mt-5 underline text-body md:text-[20px] leading-[24px]"
           >View projects</a
         >
       </div>
-      <div class="max-w-[476px] flex flex-col gap-10">
+      <div class="max-w-full md:max-w-[476px] flex flex-col gap-6 md:gap-10">
         <div>
-          <h4 class="text-h6 font-semibold text-primary">
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
             People-Centered Design
           </h4>
-          <p class="mt-2 text-primary/80 text-body leading-body">
+          <p
+            class="mt-2 text-primary/80 text-body-sm md:text-body leading-body"
+          >
             Your comfort, lifestyle, and community come first. Every space is
             crafted to fit how you live, work, and connect.
           </p>
         </div>
         <div>
-          <h4 class="text-h6 font-semibold text-primary">
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
             Future-Ready Innovation
           </h4>
-          <p class="mt-2 text-primary/80 text-body leading-body">
+          <p
+            class="mt-2 text-primary/80 text-body-sm md:text-body leading-body"
+          >
             Enjoy modern living today with designs that adapt to tomorrow. Smart
             layouts, cutting-edge features, and timeless style keep your
             investment relevant.
           </p>
         </div>
         <div>
-          <h4 class="text-h6 font-semibold text-primary">
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
             Sustainable Practices
           </h4>
-          <p class="mt-2 text-primary/80 text-body leading-body">
+          <p
+            class="mt-2 text-primary/80 text-body-sm md:text-body leading-body"
+          >
             Live better while making a positive impact. Our eco-conscious
             choices mean healthier environments, lower costs, and communities
             built to last.
           </p>
         </div>
         <div>
-          <h4 class="text-h6 font-semibold text-primary">Enduring Value</h4>
-          <p class="mt-2 text-primary/80 text-body leading-body">
-            More than a property — it’s long-term peace of mind. Our
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
+            Enduring Value
+          </h4>
+          <p
+            class="mt-2 text-primary/80 text-body-sm md:text-body leading-body"
+          >
+            More than a property — it's long-term peace of mind. Our
             developments deliver appreciation, security, and a legacy you can
             count on.
           </p>
@@ -119,51 +139,74 @@ import Layout from "../layouts/Layout.astro";
   </section>
 
   <section>
-    <div class="container mx-auto px-6">
+    <div class="container mx-auto px-4 md:px-6">
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-4">
-          <span class="size-5 rounded-full bg-secondary shrink-0"></span>
-          <h6 class="text-h6 font-semibold text-primary">PROJECTS</h6>
+        <div class="flex items-center gap-3 md:gap-4">
+          <span class="size-4 md:size-5 rounded-full bg-secondary shrink-0"
+          ></span>
+          <h6 class="text-body-sm md:text-h6 font-semibold text-primary">
+            PROJECTS
+          </h6>
         </div>
 
-        <a href="/projects" class="mt-5 underline text-[20px] leading-[24px]"
+        <a
+          href="/projects"
+          class="mt-4 md:mt-5 underline text-body-sm md:text-[20px] leading-[24px]"
           >See all projects</a
         >
       </div>
     </div>
   </section>
 
-  <section class="py-12">
-    <div class="container mx-auto px-6 flex justify-between gap-12">
-      <div>
-        <h6 class="text-h6 text-primary uppercase">
+  <section class="py-8 md:py-12">
+    <div
+      class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-8 md:gap-12"
+    >
+      <div class="md:w-auto">
+        <h6 class="text-body-sm md:text-h6 text-primary uppercase">
           Your property <br />journey simplified
         </h6>
       </div>
-      <div class="flex flex-col gap-10">
-        <div class="grid grid-cols-2 gap-[80px] max-w-[727px]">
-          <h4 class="text-h6 font-semibold text-primary">Explore & Select</h4>
-          <p class="text-primary/80 text-body leading-body max-w-[432px]">
+      <div class="flex flex-col gap-6 md:gap-10">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[80px] max-w-full md:max-w-[727px]"
+        >
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
+            Explore & Select
+          </h4>
+          <p
+            class="text-primary/80 text-body-sm md:text-body leading-body max-w-full md:max-w-[432px]"
+          >
             Browse our portfolio of residences, communities, and lifestyle
             spaces. Choose the property that best matches your needs and
             aspirations.
           </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-[80px] max-w-[727px]">
-          <h4 class="text-h6 font-semibold text-primary">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[80px] max-w-full md:max-w-[727px]"
+        >
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
             Secure & Personalize
           </h4>
-          <p class="text-primary/80 text-body leading-body max-w-[432px]">
-            Work with our team to reserve your property. We’ll guide you through
+          <p
+            class="text-primary/80 text-body-sm md:text-body leading-body max-w-full md:max-w-[432px]"
+          >
+            Work with our team to reserve your property. We'll guide you through
             transparent pricing, flexible payment options, and available
             customization features.
           </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-[80px] max-w-[727px]">
-          <h4 class="text-h6 font-semibold text-primary">Move In & Thrive</h4>
-          <p class="text-primary/80 text-body leading-body max-w-[432px]">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[80px] max-w-full md:max-w-[727px]"
+        >
+          <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
+            Move In & Thrive
+          </h4>
+          <p
+            class="text-primary/80 text-body-sm md:text-body leading-body max-w-full md:max-w-[432px]"
+          >
             Receive your keys and start living, working, or investing with
             confidence. Enjoy ongoing support, from property management to
             long-term value growth.
@@ -173,36 +216,39 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="mt-12">
+  <section class="mt-8 md:mt-12">
     <Image
       src={imageUrl}
       alt="Duston Properties"
-      class="w-full h-[800px] object-cover"
+      class="w-full h-[300px] md:h-[800px] object-cover"
       width={1440}
       height={800}
     />
   </section>
 
   <!-- {Insights} -->
-  <section class="py-20">
-    <div class="container mx-auto px-6">
-      <div class="flex items-center gap-4">
-        <span class="size-5 rounded-full bg-secondary shrink-0"></span>
-        <h6 class="text-h6 font-semibold text-primary">Insights</h6>
+  <section class="py-12 md:py-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex items-center gap-3 md:gap-4">
+        <span class="size-4 md:size-5 rounded-full bg-secondary shrink-0"
+        ></span>
+        <h6 class="text-body-lg md:text-h6 font-semibold text-primary">
+          Insights
+        </h6>
       </div>
-      <div class="mt-10 flex flex-col">
+      <div class="mt-6 md:mt-10 flex flex-col">
         <InsightCard />
         <InsightCard
           tag="Article"
           readTime="7 min read"
-          title="Designing Communities for Tomorrow’s Needs"
-          excerpt="From adaptable floor plans to connected amenities, here’s how thoughtful design creates long-term value for residents and investors."
+          title="Designing Communities for Tomorrow's Needs"
+          excerpt="From adaptable floor plans to connected amenities, here's how thoughtful design creates long-term value for residents and investors."
           imageSrc="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1440&auto=format&fit=crop"
         />
       </div>
 
       <button
-        class="bg-primary mx-auto text-white p-3 font-medium rounded-full flex items-center gap-2 mt-10"
+        class="bg-primary mx-auto text-white px-5 py-3 font-medium rounded-full flex items-center gap-2 mt-8 md:mt-10"
       >
         Read more insights
 

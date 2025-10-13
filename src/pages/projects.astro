@@ -14,12 +14,16 @@ const [featured, ...rest] = insights;
 ---
 
 <Layout>
-  <section class="pt-10">
-    <div class="container mx-auto flex justify-between">
-      <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+  <section class="pt-6 md:pt-10">
+    <div
+      class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-6 md:gap-0"
+    >
+      <h1
+        class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
+      >
         Projects
       </h1>
-      <div class="mt-6">
+      <div class="mt-2 md:mt-6">
         <InsightsFilters categories={INSIGHT_CATEGORIES} />
       </div>
     </div>

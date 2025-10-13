@@ -14,19 +14,23 @@ const [featured, ...rest] = insights;
 ---
 
 <Layout>
-  <section class="pt-10">
-    <div class="container mx-auto flex justify-between">
-      <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+  <section class="pt-6 md:pt-10">
+    <div
+      class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-6 md:gap-0"
+    >
+      <h1
+        class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
+      >
         Insights
       </h1>
-      <div class="mt-6">
+      <div class="mt-2 md:mt-6">
         <InsightsFilters categories={INSIGHT_CATEGORIES} />
       </div>
     </div>
   </section>
 
-  <section class="py-10">
-    <div class="container mx-auto">
+  <section class="py-6 md:py-10">
+    <div class="container mx-auto px-4 md:px-6">
       <FeaturedInsight
         tag="Sustainability"
         readTime={featured.readTime}
@@ -37,9 +41,9 @@ const [featured, ...rest] = insights;
     </div>
   </section>
 
-  <section class="pb-20">
+  <section class="pb-12 md:pb-20">
     <div
-      class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10"
+      class="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10"
       data-insights-grid
     >
       {

@@ -6,56 +6,71 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="py-16">
-    <div class="container mx-auto">
+  <section class="py-8 md:py-16">
+    <div class="container mx-auto px-4 md:px-6">
       <div class="mx-auto max-w-[984px]">
-        <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+        <h1
+          class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
+        >
           With sustainability at our core, Duston developments are more than
           homes and spaces they are responsible legacies.
         </h1>
       </div>
     </div>
 
-    <div class="mt-12">
+    <div class="mt-8 md:mt-12">
       <Image
         src={imageUrl}
         alt="Duston Properties"
-        class="w-full h-[744px] object-cover"
+        class="w-full h-[300px] md:h-[744px] object-cover"
         width={1440}
         height={744}
       />
     </div>
   </section>
 
-  <section class="pb-20">
-    <div class="container mx-auto">
-      <div class="flex items-start gap-10 justify-between">
-        <div class="flex items-center gap-4">
-          <span class="size-5 rounded-full bg-secondary shrink-0"></span>
-          <h6 class="text-h6">OUR PHILOSOPHY</h6>
+  <section class="pb-12 md:pb-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <div
+        class="flex flex-col md:flex-row items-start gap-6 md:gap-10 justify-between"
+      >
+        <div class="flex items-center gap-3 md:gap-4">
+          <span class="size-4 md:size-5 rounded-full bg-secondary shrink-0"
+          ></span>
+          <h6 class="text-body-sm md:text-h6">OUR PHILOSOPHY</h6>
         </div>
-        <div class="flex flex-col gap-8 max-w-[476px]">
+        <div class="flex flex-col gap-6 md:gap-8 max-w-full md:max-w-[476px]">
           <div>
-            <h4 class="text-h6 font-semibold text-primary">Our Commitment</h4>
-            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+            <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
+              Our Commitment
+            </h4>
+            <p
+              class="mt-2 text-primary/80 text-body md:text-body-lg leading-body"
+            >
               Sustainability is not an addition to our process; it is embedded
               in our philosophy. We believe the environments we create should
               enrich lives without compromising the planet.
             </p>
           </div>
           <div>
-            <h4 class="text-h6 font-semibold text-primary">Green Design</h4>
-            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+            <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
+              Green Design
+            </h4>
+            <p
+              class="mt-2 text-primary/80 text-body md:text-body-lg leading-body"
+            >
               We integrate energy-efficient systems, natural light, and
               eco-friendly materials into our projects, reducing environmental
               impact while enhancing comfort and well-being.
             </p>
           </div>
           <div>
-            <h4 class="text-h6 font-semibold text-primary">
+            <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
               Communities That Last
             </h4>
-            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+            <p
+              class="mt-2 text-primary/80 text-body md:text-body-lg leading-body"
+            >
               We design neighbourhoods that are resilient, inclusive, and
               supportive of health and happiness. From green spaces to social
               amenities, our projects prioritise quality of life.
@@ -63,18 +78,24 @@ import Layout from "../layouts/Layout.astro";
           </div>
 
           <div>
-            <h4 class="text-h6 font-semibold text-primary">
+            <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
               Environmental Stewardship
             </h4>
-            <p class="mt-2 text-primary/80 text-body-lg leading-body">
-              Every development reflects Duston’s responsibility to conserve
+            <p
+              class="mt-2 text-primary/80 text-body md:text-body-lg leading-body"
+            >
+              Every development reflects Duston's responsibility to conserve
               resources, minimise waste, and reduce carbon emissions.
             </p>
           </div>
 
           <div>
-            <h4 class="text-h6 font-semibold text-primary">Legacy Thinking</h4>
-            <p class="mt-2 text-primary/80 text-body-lg leading-body">
+            <h4 class="text-body-lg md:text-h6 font-semibold text-primary">
+              Legacy Thinking
+            </h4>
+            <p
+              class="mt-2 text-primary/80 text-body md:text-body-lg leading-body"
+            >
               We are not only building for today but shaping environments that
               will sustain future generations.
             </p>
@@ -84,9 +105,11 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-20">
-    <div class="container mx-auto">
-      <div class="w-full h-[708px] overflow-hidden rounded relative">
+  <section class="py-12 md:py-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <div
+        class="w-full h-[400px] md:h-[708px] overflow-hidden rounded relative"
+      >
         <video
           src={videoUrl}
           autoplay
@@ -94,16 +117,16 @@ import Layout from "../layouts/Layout.astro";
           loop
           class="w-full h-full object-cover"></video>
         <div
-          class="absolute inset-0 bg-primary/50 flex flex-col items-center justify-center"
+          class="absolute inset-0 bg-primary/50 flex flex-col items-center justify-center px-4"
         >
           <h2
-            class="text-d2 text-white max-w-[826px] text-center leading-[78px] font-semibold"
+            class="text-h5 md:text-d2 text-white max-w-[90%] md:max-w-[826px] text-center leading-tight md:leading-[78px] font-semibold"
           >
             <span class="text-secondary">Build Your Future</span> with Duston Properties
           </h2>
 
           <button
-            class="bg-white text-primary p-3 font-medium rounded-full flex items-center gap-2 mt-20"
+            class="bg-white text-primary px-5 py-3 font-medium rounded-full flex items-center gap-2 mt-10 md:mt-20"
           >
             Find a property
 
