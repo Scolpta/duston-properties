@@ -30,53 +30,8 @@ const intro: string =
   </section>
 
   <section class="pb-24 max-w-[768px] mx-auto">
-    <div class="legal-content text-primary">
+    <div class="prose text-primary prose-h2:mb-1 prose-h2:mt-5">
       <slot />
     </div>
   </section>
 </Layout>
-
-<style>
-  .legal-content h2 {
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    font-size: var(--text-h4);
-    line-height: var(--leading-h4);
-    color: var(--color-primary);
-  }
-
-  .legal-content h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    font-size: var(--text-h5);
-    line-height: var(--leading-h5);
-    color: var(--color-primary);
-  }
-
-  .legal-content p {
-    margin-top: 1rem;
-    font-size: var(--text-body);
-    line-height: var(--leading-body);
-    color: color-mix(in srgb, var(--color-primary) 85%, transparent);
-  }
-
-  .legal-content ul,
-  .legal-content ol {
-    margin-top: 1rem;
-    padding-left: 1.25rem;
-  }
-
-  .legal-content ul li {
-    list-style: disc;
-  }
-  .legal-content ol li {
-    list-style: decimal;
-  }
-
-  .legal-content a {
-    color: var(--color-secondary);
-    text-decoration: underline;
-  }
-</style>
