@@ -11,17 +11,19 @@ const intro: string =
 ---
 
 <Layout>
-  <section class="py-16 max-w-[768px] mx-auto">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-      <p class="text-body leading-body text-secondary">
+  <section class="py-8 md:py-16 max-w-[768px] mx-auto">
+    <div class="container mx-auto px-4 md:px-6 max-w-4xl text-center">
+      <p class="text-body-sm md:text-body leading-body text-secondary">
         Current as of {updated}
       </p>
-      <h1 class="mt-3 text-d1 leading-[1.1] font-semibold text-primary">
+      <h1
+        class="mt-3 text-h4 md:text-d1 leading-tight md:leading-[1.1] font-semibold text-primary"
+      >
         {title}
       </h1>
       {
         intro && (
-          <p class="mt-6 text-body leading-body text-primary/80 max-w-3xl mx-auto">
+          <p class="mt-4 md:mt-6 text-body-sm md:text-body leading-body text-primary/80 max-w-3xl mx-auto">
             {intro}
           </p>
         )
@@ -29,54 +31,11 @@ const intro: string =
     </div>
   </section>
 
-  <section class="pb-24 max-w-[768px] mx-auto">
-    <div class="legal-content text-primary">
+  <section class="pb-12 md:pb-24 max-w-[768px] mx-auto">
+    <div
+      class="prose prose-sm md:prose text-primary prose-h2:mb-1 prose-h2:mt-5 px-4 md:px-0"
+    >
       <slot />
     </div>
   </section>
 </Layout>
-
-<style>
-  .legal-content h2 {
-    margin-top: 2.5rem;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-    font-size: var(--text-h4);
-    line-height: var(--leading-h4);
-    color: var(--color-primary);
-  }
-
-  .legal-content h3 {
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    font-size: var(--text-h5);
-    line-height: var(--leading-h5);
-    color: var(--color-primary);
-  }
-
-  .legal-content p {
-    margin-top: 1rem;
-    font-size: var(--text-body);
-    line-height: var(--leading-body);
-    color: color-mix(in srgb, var(--color-primary) 85%, transparent);
-  }
-
-  .legal-content ul,
-  .legal-content ol {
-    margin-top: 1rem;
-    padding-left: 1.25rem;
-  }
-
-  .legal-content ul li {
-    list-style: disc;
-  }
-  .legal-content ol li {
-    list-style: decimal;
-  }
-
-  .legal-content a {
-    color: var(--color-secondary);
-    text-decoration: underline;
-  }
-</style>

@@ -16,30 +16,38 @@ const {
 } = Astro.props as Props;
 ---
 
-<article class="w-full border-b border-[#C0C0C0]/30 py-10">
-  <div class="flex justify-between gap-10 items-start">
-    <div class="max-w-[520px] flex flex-col">
+<article class="w-full border-b border-[#C0C0C0]/30 py-6 md:py-10">
+  <div
+    class="flex flex-col md:flex-row justify-between gap-6 md:gap-10 items-start"
+  >
+    <div class="max-w-full md:max-w-[520px] flex flex-col order-2 md:order-1">
       <div
-        class="flex items-center gap-4 text-primary/80 text-[14px] leading-[20px]"
+        class="flex items-center gap-3 md:gap-4 text-primary/80 text-[12px] md:text-[14px] leading-[20px]"
       >
         <span
-          class="inline-flex items-center rounded bg-white text-primary px-2 py-1 text-[12px] leading-[16px] border border-primary/10"
+          class="inline-flex items-center rounded bg-white text-primary px-2 py-1 text-[11px] md:text-[12px] leading-[16px] border border-primary/10"
         >
           {tag}
         </span>
         <span>{readTime}</span>
       </div>
 
-      <h3 class="text-h6 mt-4 font-semibold text-primary">
+      <h3
+        class="text-body-lg md:text-h6 mt-3 md:mt-4 font-semibold text-primary"
+      >
         {title}
       </h3>
 
-      <p class="text-body leading-body text-primary mt-10 line-clamp-4">
+      <p
+        class="text-body-sm md:text-body leading-body text-primary mt-4 md:mt-10 line-clamp-4"
+      >
         {excerpt}
       </p>
     </div>
 
-    <div class="w-[522px] h-[300px] overflow-hidden rounded">
+    <div
+      class="w-full md:w-[522px] h-[200px] md:h-[300px] overflow-hidden rounded order-1 md:order-2"
+    >
       <img src={imageSrc} alt={title} class="w-full h-full object-cover" />
     </div>
   </div>

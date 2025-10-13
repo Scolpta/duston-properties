@@ -5,20 +5,28 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="py-16">
-    <div class="container mx-auto">
-      <div class="mb-10">
-        <h1 class="text-d2 leading-[78px] font-semibold text-primary">
+  <section class="py-8 md:py-16">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="mb-8 md:mb-10">
+        <h1
+          class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
+        >
           Whether you are seeking a new home, exploring investment
           opportunities, or partnering on a development, Duston is ready to
-          shape what’s next with you.
+          shape what's next with you.
         </h1>
       </div>
 
-      <div class="mt-20 grid grid-cols-3 gap-10">
-        <div>
-          <h3 class="text-h6 font-semibold mb-4">Contact us</h3>
-          <ul class="space-y-3 text-[15px] leading-6">
+      <div
+        class="mt-10 md:mt-20 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10"
+      >
+        <div class="col-span-2 md:col-span-1">
+          <h3 class="text-body-lg md:text-h6 font-semibold mb-3 md:mb-4">
+            Contact us
+          </h3>
+          <ul
+            class="space-y-2 md:space-y-3 text-[14px] md:text-[15px] leading-6"
+          >
             <li>
               <a
                 class="hover:underline"
@@ -34,8 +42,12 @@ import Layout from "../layouts/Layout.astro";
           </ul>
         </div>
         <div>
-          <h3 class="text-h6 font-semibold mb-4">Follow us</h3>
-          <ul class="space-y-3 text-[15px] leading-6">
+          <h3 class="text-body-lg md:text-h6 font-semibold mb-3 md:mb-4">
+            Follow us
+          </h3>
+          <ul
+            class="space-y-2 md:space-y-3 text-[14px] md:text-[15px] leading-6"
+          >
             <li><a class="hover:underline" href="#">Instagram</a></li>
             <li><a class="hover:underline" href="#">Facebook</a></li>
             <li><a class="hover:underline" href="#">LinkedIn</a></li>
@@ -43,72 +55,79 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <div>
-          <h3 class="text-h6 font-semibold mb-4">Location</h3>
-          <p class="text-[15px] leading-6">
+          <h3 class="text-body-lg md:text-h6 font-semibold mb-3 md:mb-4">
+            Location
+          </h3>
+          <p class="text-[14px] md:text-[15px] leading-6">
             No 1 Fofo Link<br />
             North Dzorwulu,<br />
             Accra
           </p>
         </div>
       </div>
-      <hr class="mt-16 text-[#D4CFCF]" />
+      <hr class="mt-10 md:mt-16 text-[#D4CFCF]" />
     </div>
   </section>
 
-  <section class="pb-20">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-2 gap-20">
+  <section class="pb-12 md:pb-20">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
         <div class="flex flex-col">
-          <h6 class="text-h3 font-semibold text-primary">Contact us</h6>
-          <p>We invite you to connect with us.</p>
+          <h6 class="text-h5 md:text-h3 font-semibold text-primary">
+            Contact us
+          </h6>
+          <p class="text-body-sm md:text-body">
+            We invite you to connect with us.
+          </p>
 
-          <form class="mt-10">
-            <div class="grid grid-cols-2 gap-10">
-              <div class="col-span-2">
-                <label for="name" class="text-base">Name</label>
+          <form class="mt-6 md:mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+              <div class="col-span-1 md:col-span-2">
+                <label for="name" class="text-sm md:text-base">Name</label>
                 <input
                   type="text"
                   id="name"
-                  class="w-full border border-gray-300 rounded-md p-2"
+                  class="w-full border border-gray-300 rounded-md p-2 text-sm md:text-base"
                 />
               </div>
-              <div>
-                <label for="email" class="text-base">Email</label>
+              <div class="col-span-1">
+                <label for="email" class="text-sm md:text-base">Email</label>
                 <input
                   type="email"
                   id="email"
-                  class="w-full border border-gray-300 rounded-md p-2"
+                  class="w-full border border-gray-300 rounded-md p-2 text-sm md:text-base"
                 />
               </div>
 
-              <div>
-                <label for="phone" class="text-base">Phone</label>
+              <div class="col-span-1">
+                <label for="phone" class="text-sm md:text-base">Phone</label>
                 <input
                   type="tel"
                   id="phone"
-                  class="w-full border border-gray-300 rounded-md p-2"
+                  class="w-full border border-gray-300 rounded-md p-2 text-sm md:text-base"
                 />
               </div>
 
-              <div class="col-span-2">
-                <label for="phone" class="text-base">Title</label>
+              <div class="col-span-1 md:col-span-2">
+                <label for="title" class="text-sm md:text-base">Title</label>
                 <input
                   type="text"
                   id="title"
-                  class="w-full border border-gray-300 rounded-md p-2"
+                  class="w-full border border-gray-300 rounded-md p-2 text-sm md:text-base"
                 />
               </div>
-              <div class="col-span-2">
-                <label for="message" class="text-base">Message</label>
+              <div class="col-span-1 md:col-span-2">
+                <label for="message" class="text-sm md:text-base">Message</label
+                >
                 <textarea
                   id="message"
-                  class="w-full border border-gray-300 rounded-md p-2"
+                  class="w-full border border-gray-300 rounded-md p-2 text-sm md:text-base"
                 ></textarea>
               </div>
 
-              <div class="col-span-2 flex items-center gap-2">
+              <div class="col-span-1 md:col-span-2 flex items-center gap-2">
                 <input type="checkbox" name="terms" id="terms" class="size-4" />
-                <label for="terms"
+                <label for="terms" class="text-sm md:text-base"
                   >I have read and agree to the <a
                     href="/terms-and-conditions"
                     class="underline">terms and conditions</a
@@ -119,13 +138,13 @@ import Layout from "../layouts/Layout.astro";
 
             <button
               type="submit"
-              class="bg-primary text-white px-4 py-3 rounded-full w-full mt-10"
+              class="bg-primary text-white px-4 py-3 rounded-full w-full mt-6 md:mt-10 text-sm md:text-base"
             >
               Submit
             </button>
           </form>
         </div>
-        <div class="w-full h-[781px] rounded-lg overflow-hidden">
+        <div class="w-full h-[400px] md:h-[781px] rounded-lg overflow-hidden">
           <Image
             src={imageUrl}
             alt="Duston Properties"
