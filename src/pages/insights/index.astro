@@ -1,16 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import FeaturedInsight from "../components/FeaturedInsight.astro";
-import InsightTile from "../components/InsightTile.astro";
-import InsightsFilters from "../components/InsightsFilters.astro";
+import Layout from "../../layouts/Layout.astro";
+import FeaturedInsight from "../../components/FeaturedInsight.astro";
+import InsightTile from "../../components/InsightTile.astro";
+import InsightsFilters from "../../components/InsightsFilters.astro";
 import {
-  fetchInsights,
   INSIGHT_CATEGORIES,
-  type InsightItem,
-} from "../lib/insights";
+} from "../../lib/insights";
+import { getPostsQuery, type Post } from "../../types";
 
-const insights = (await fetchInsights()) as InsightItem[];
-const [featured, ...rest] = insights;
+const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, getPostsQuery);
+const json = await response.json();
+
+const posts: Post[] = json.data.posts;
+
+const [featured, ...rest] = posts;
 ---
 
 <Layout>
@@ -32,11 +35,11 @@ const [featured, ...rest] = insights;
   <section class="py-6 md:py-10">
     <div class="container mx-auto px-4 md:px-6">
       <FeaturedInsight
-        tag="Sustainability"
-        readTime={featured.readTime}
+        tag={featured.postTag}
+        readTime={"5 min read"}
         title={featured.title}
         excerpt={featured.excerpt}
-        imageSrc={"https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop"}
+        imageSrc={featured.coverImage.url}
       />
     </div>
   </section>
@@ -48,12 +51,12 @@ const [featured, ...rest] = insights;
     >
       {
         rest.map((item) => (
-          <div data-tag={item.category} data-title={item.title}>
+          <div data-tag={item.postTag} data-title={item.title}>
             <InsightTile
-              tag={item.category}
-              readTime={item.readTime}
+              tag={item.postTag}
+              readTime={"5 min read"}
               title={item.title}
-              imageSrc={item.imageSrc}
+              imageSrc={item.coverImage.url}
             />
           </div>
         ))

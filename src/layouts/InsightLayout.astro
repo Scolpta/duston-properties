@@ -1,0 +1,79 @@
+---
+import Layout from "./Layout.astro";
+
+export interface Props {
+  tag?: string;
+  title?: string;
+  createdAt?: string;
+  readTime?: string;
+  shareUrl?: string;
+  coverImage?: {
+    url: string;
+    altText?: string;
+    width?: number;
+    height?: number;
+  } | null;
+}
+
+const { tag, title, createdAt, readTime, shareUrl, coverImage } =
+  Astro.props as Props;
+---
+
+<Layout>
+  <section class="pt-6 md:pt-10">
+    <div class="max-w-[854px] mx-auto px-4 md:px-6">
+      {
+        tag && (
+          <p class="text-primary/70 text-[12px] md:text-[14px] leading-[20px]">
+            {tag}
+          </p>
+        )
+      }
+
+      {
+        title && (
+          <h1 class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary mt-2">
+            {title}
+          </h1>
+        )
+      }
+
+      {
+        (createdAt || readTime) && (
+          <div class="flex items-center gap-2 text-primary/80 text-[12px] md:text-[14px] mt-4">
+            {createdAt && (
+              <span>{new Date(createdAt).toLocaleDateString()}</span>
+            )}
+            {createdAt && readTime && <span>•</span>}
+            {readTime && <span>{readTime}</span>}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  {
+    coverImage?.url && (
+      <section class="py-6 md:py-10">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="w-full overflow-hidden rounded">
+            <img
+              src={coverImage.url}
+              alt={coverImage.altText || title || "Insight cover image"}
+              width={coverImage.width}
+              height={coverImage.height}
+              class="w-full h-auto object-cover"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="pb-12 md:pb-20">
+    <div class="container mx-auto px-4 md:px-6 max-w-[768px]">
+      <slot />
+    </div>
+  </section>
+</Layout>
