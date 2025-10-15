@@ -4,12 +4,13 @@ export interface Props {
   readTime: string;
   title: string;
   imageSrc: string;
-}
+  slug: string;
+  }
 
-const { tag, readTime, title, imageSrc } = Astro.props as Props;
+const { tag, readTime, title, imageSrc, slug } = Astro.props as Props;
 ---
 
-<article class="flex flex-col">
+<a href={`/insights/${slug}`} class="flex flex-col">
   <div class="w-full h-[360px] md:h-[420px] overflow-hidden rounded">
     <img src={imageSrc} alt={title} class="w-full h-full object-cover" />
   </div>
@@ -26,4 +27,4 @@ const { tag, readTime, title, imageSrc } = Astro.props as Props;
   >
     {title}
   </h3>
-</article>
+</a>
