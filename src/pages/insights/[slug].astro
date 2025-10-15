@@ -1,0 +1,51 @@
+---
+import InsightLayout from "../../layouts/InsightLayout.astro";
+import { getPostBySlugQuery, type Post } from "../../types";
+
+export async function getStaticPaths() {
+  const query = `
+    query posts {
+      posts {
+        slug
+      }
+    }
+  `;
+
+  const result = await fetch(import.meta.env.HYGRAPH_ENDPOINT, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+  const blogPosts = await result.json();
+
+  return blogPosts.data.posts.map((post: Post) => ({
+    params: { slug: post.slug },
+    props: { post }, // Pass the entire post object as a prop
+  }));
+}
+
+const { slug } = Astro.params;
+
+const response = await fetch(
+  import.meta.env.HYGRAPH_ENDPOINT,
+  getPostBySlugQuery(slug as string)
+);
+const json = await response.json();
+
+const post = json.data.post as Post;
+const content = post.content.html;
+---
+
+<InsightLayout
+  tag={post.postTag}
+  title={post.title}
+  createdAt={post.createdAt}
+  readTime={"5 min read"}
+  shareUrl={Astro.url?.href}
+  coverImage={post.coverImage}
+>
+  <div
+    set:html={content}
+    class="prose prose-sm md:prose text-primary prose-h2:mb-1 prose-h2:mt-5"
+  />
+</InsightLayout>

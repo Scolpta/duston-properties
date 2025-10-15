@@ -1,11 +1,21 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
+import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
+
+  image: {
+    // Example: allow processing all images from Hygraph
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**.graphassets.com",
+      },
+    ],
+  },
+
+  integrations: [react()],
 });
