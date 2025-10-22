@@ -1,30 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import FeaturedInsight from "../components/FeaturedInsight.astro";
-import InsightTile from "../components/InsightTile.astro";
-import InsightsFilters from "../components/InsightsFilters.astro";
-import {
-  fetchInsights,
-  INSIGHT_CATEGORIES,
-  type InsightItem,
-} from "../lib/insights";
-
-const insights = (await fetchInsights()) as InsightItem[];
-const [featured, ...rest] = insights;
+import projectImg1 from "../assets/euphoria.webp?url";
+import projectImg2 from "../assets/livon.webp?url";
+import projectImg3 from "../assets/petals.webp?url";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <Layout>
   <section class="pt-6 md:pt-10">
-    <div
-      class="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between gap-6 md:gap-0"
-    >
+    <div class="container mx-auto px-4 md:px-6 flex flex-col gap-6 md:gap-0">
       <h1
         class="text-h4 md:text-d2 leading-tight md:leading-[78px] font-semibold text-primary"
       >
         Projects
       </h1>
-      <div class="mt-2 md:mt-6">
+      <!-- <div class="mt-2 md:mt-6">
         <InsightsFilters categories={INSIGHT_CATEGORIES} />
+      </div> -->
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-6 md:mt-10">
+        <div>
+          <ProjectCard
+            title="Euphoria Accra"
+            subtitle="View projects"
+            imageSrc={projectImg1}
+            href="/projects"
+          />
+        </div>
+        <div>
+          <ProjectCard
+            title="Livon Health"
+            subtitle="Coming soon"
+            imageSrc={projectImg2}
+          />
+        </div>
+        <div>
+          <ProjectCard
+            title="New Development"
+            subtitle="Coming soon"
+            imageSrc={projectImg3}
+          />
+        </div>
       </div>
     </div>
   </section>

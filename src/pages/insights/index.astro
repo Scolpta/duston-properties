@@ -3,9 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import FeaturedInsight from "../../components/FeaturedInsight.astro";
 import InsightTile from "../../components/InsightTile.astro";
 import InsightsFilters from "../../components/InsightsFilters.astro";
-import {
-  INSIGHT_CATEGORIES,
-} from "../../lib/insights";
+import { INSIGHT_CATEGORIES } from "../../lib/insights";
 import { getPostsQuery, type Post } from "../../types";
 
 const response = await fetch(import.meta.env.HYGRAPH_ENDPOINT, getPostsQuery);
@@ -26,9 +24,9 @@ const [featured, ...rest] = posts;
       >
         Insights
       </h1>
-      <div class="mt-2 md:mt-6">
+      <!-- <div class="mt-2 md:mt-6">
         <InsightsFilters categories={INSIGHT_CATEGORIES} />
-      </div>
+      </div> -->
     </div>
   </section>
 

@@ -40,3 +40,12 @@
   --text-body-sm: 14px;
   --leading-body-sm: 1.6; /* Medium */
 }
+
+/* Utility to hide scrollbars across browsers while retaining scrollability */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

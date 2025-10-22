@@ -15,7 +15,7 @@ import "../styles/global.css";
     <title>Duston Properties</title>
   </head>
   <body>
-    <Navbar />
+    <Navbar isHome={Astro.url.pathname === "/"} />
     <main>
       <slot />
     </main>

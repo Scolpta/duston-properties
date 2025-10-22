@@ -1,12 +1,18 @@
 ---
 import logoUrl from "../assets/logo.svg?url";
+const { isHome = false } = Astro.props;
 ---
 
 <header
   id="site-header"
-  class="w-full px-4 md:px-6 py-4 md:py-5 sticky top-0 z-50 bg-white transition-shadow"
+  data-home={isHome ? "true" : "false"}
+  class={`w-full px-4 md:px-6 py-4 md:py-5 top-0 z-50 bg-transparent transition-shadow ${
+    isHome ? "absolute" : "sticky scrolled shadow-sm"
+  }`}
 >
-  <nav class="container mx-auto flex items-center justify-between">
+  <nav
+    class="container mx-auto flex items-center justify-between relative z-10"
+  >
     <a href="/" class="flex items-center gap-3 no-underline">
       <img
         src={logoUrl}
@@ -16,29 +22,30 @@ import logoUrl from "../assets/logo.svg?url";
     </a>
 
     {/* Desktop Menu */}
-    <ul class="hidden md:flex items-center gap-10 text-slate-700">
+    <ul
+      id="desktop-nav"
+      class={`hidden md:flex items-center gap-10 transition-colors ${isHome ? "text-white" : "text-primary"}`}
+    >
       <li>
-        <a class="hover:text-slate-900 transition-colors" href="/about">About</a
-        >
+        <a class="hover:opacity-80 transition-colors" href="/about">About</a>
       </li>
       <li>
-        <a class="hover:text-slate-900 transition-colors" href="/projects"
+        <a class="hover:opacity-80 transition-colors" href="/projects"
           >Projects</a
         >
       </li>
       <li>
-        <a class="hover:text-slate-900 transition-colors" href="/insights"
+        <a class="hover:opacity-80 transition-colors" href="/insights"
           >Insights</a
         >
       </li>
       <li>
-        <a class="hover:text-slate-900 transition-colors" href="/sustainability"
+        <a class="hover:opacity-80 transition-colors" href="/sustainability"
           >Sustainability</a
         >
       </li>
       <li>
-        <a class="hover:text-slate-900 transition-colors" href="/contact"
-          >Contact</a
+        <a class="hover:opacity-80 transition-colors" href="/contact">Contact</a
         >
       </li>
     </ul>
@@ -46,7 +53,7 @@ import logoUrl from "../assets/logo.svg?url";
     {/* Mobile Menu Button */}
     <button
       id="mobile-menu-button"
-      class="md:hidden flex items-center justify-center p-2 text-slate-700"
+      class={`md:hidden flex items-center justify-center p-2 transition-colors ${isHome ? "text-white" : "text-primary"}`}
       aria-label="Toggle menu"
     >
       <svg
@@ -119,16 +126,27 @@ import logoUrl from "../assets/logo.svg?url";
 
 <script is:inline>
   const header = document.getElementById("site-header");
+  const desktopNav = document.getElementById("desktop-nav");
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
   const onScroll = () => {
     if (!header) return;
-    const scrolled = window.scrollY > 0;
+    const isHome = header.getAttribute("data-home") === "true";
+    const scrolled = isHome ? window.scrollY > 0 : true; // non-home behaves as scrolled
     header.classList.toggle("shadow-sm", scrolled);
+    header.classList.toggle("scrolled", scrolled);
+    header.classList.toggle("sticky", scrolled);
+    header.classList.toggle("absolute", !scrolled);
+
+    // Swap nav colors
+    desktopNav?.classList.toggle("text-white", !scrolled);
+    desktopNav?.classList.toggle("text-primary", scrolled);
+    mobileMenuButton?.classList.toggle("text-white", !scrolled);
+    mobileMenuButton?.classList.toggle("text-primary", scrolled);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
   // Mobile menu toggle
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
   const menuIcon = document.getElementById("menu-icon");
   const closeIcon = document.getElementById("close-icon");
@@ -159,3 +177,27 @@ import logoUrl from "../assets/logo.svg?url";
     });
   });
 </script>
+
+<style>
+  /* Drop-in white background layer (only visible on home when scrolled) */
+  #site-header[data-home="true"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition:
+      transform 300ms cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  #site-header[data-home="true"].scrolled::before {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* On non-home, keep a solid white background always */
+  #site-header[data-home="false"] {
+    background: #ffffff;
+  }
+</style>
